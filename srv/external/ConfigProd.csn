@@ -1,0 +1,587 @@
+{
+ "meta": {
+  "creator": "cds-dk 7.0.3"
+ },
+ "$version": "2.0",
+ "definitions": {
+  "ConfigProd": {
+   "kind": "service",
+   "@cds.external": true,
+   "@m.IsDefaultEntityContainer": "true"
+  },
+  "ConfigProd.getLocProdCharAPI": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "elements": {
+    "LOCATION_ID": {
+     "key": true,
+     "type": "cds.String",
+     "length": 4,
+     "notNull": true
+    },
+    "LOCATION_DESC": {
+     "key": true,
+     "type": "cds.String",
+     "length": 30,
+     "notNull": true
+    },
+    "PRODUCT_ID": {
+     "key": true,
+     "type": "cds.String",
+     "length": 40,
+     "notNull": true
+    },
+    "PROD_DESC": {
+     "key": true,
+     "type": "cds.String",
+     "length": 40,
+     "notNull": true
+    },
+    "PROD_TYPE": {
+     "key": true,
+     "type": "cds.String",
+     "length": 4,
+     "notNull": true
+    },
+    "CUSTOMER_GROUP": {
+     "key": true,
+     "type": "cds.String",
+     "length": 20,
+     "notNull": true
+    },
+    "IBP_CUSTOMER": {
+     "key": true,
+     "type": "cds.String",
+     "length": 10,
+     "notNull": true
+    },
+    "CLASS_NUM": {
+     "key": true,
+     "type": "cds.String",
+     "length": 20,
+     "notNull": true
+    },
+    "CLASS_NAME": {
+     "key": true,
+     "type": "cds.String",
+     "length": 20,
+     "notNull": true
+    },
+    "CLASS_DESC": {
+     "key": true,
+     "type": "cds.String",
+     "length": 150,
+     "notNull": true
+    },
+    "CHAR_DESC": {
+     "key": true,
+     "type": "cds.String",
+     "length": 150,
+     "notNull": true
+    },
+    "CHAR_NUM": {
+     "key": true,
+     "type": "cds.String",
+     "length": 30,
+     "notNull": true
+    },
+    "CHAR_NAME": {
+     "key": true,
+     "type": "cds.String",
+     "length": 30,
+     "notNull": true
+    },
+    "CHARVAL_NUM": {
+     "key": true,
+     "type": "cds.String",
+     "length": 70,
+     "notNull": true
+    },
+    "CHAR_VALUE": {
+     "key": true,
+     "type": "cds.String",
+     "length": 70,
+     "notNull": true
+    },
+    "CHARVAL_DESC": {
+     "key": true,
+     "type": "cds.String",
+     "length": 150,
+     "notNull": true
+    },
+    "IBPCHAR_CHK": {
+     "key": true,
+     "type": "cds.Boolean",
+     "notNull": true
+    },
+    "VALID_FROM": {
+     "key": true,
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "notNull": true
+    },
+    "VALID_TO": {
+     "key": true,
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "notNull": true
+    }
+   }
+  },
+  "ConfigProd.cp_ds_uniqueIDFnResponse": {
+    "kind": "type",
+    "@cds.external": true,
+    "elements": {
+     "Type": {
+      "type": "cds.String",
+      "length": 15
+     },
+     "Description": {
+      "type": "cds.LargeString"
+     },
+     "statusCode": {
+      "type": "cds.Integer"
+     },
+     "resultData": {
+      "type": "cds.LargeString"
+     }
+    }
+   },
+  "ConfigProd.getClassCharAPI": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "elements": {
+    "CLASS_NUM": {
+     "key": true,
+     "type": "cds.String",
+     "length": 18,
+     "notNull": true
+    },
+    "CLASS_NAME": {
+     "key": true,
+     "type": "cds.String",
+     "length": 20,
+     "notNull": true
+    },
+    "CLASS_DESC": {
+     "key": true,
+     "type": "cds.String",
+     "length": 150,
+     "notNull": true
+    },
+    "IBPCHAR_CHK": {
+     "key": true,
+     "type": "cds.Boolean",
+     "notNull": true
+    },
+    "CHAR_NUM": {
+     "key": true,
+     "type": "cds.String",
+     "length": 10,
+     "notNull": true
+    },
+    "CHAR_NAME": {
+     "key": true,
+     "type": "cds.String",
+     "length": 30,
+     "notNull": true
+    },
+    "CHAR_DESC": {
+     "key": true,
+     "type": "cds.String",
+     "length": 150,
+     "notNull": true
+    },
+    "CHAR_GROUP": {
+     "key": true,
+     "type": "cds.String",
+     "length": 10,
+     "notNull": true
+    },
+    "CHAR_VALUE": {
+     "key": true,
+     "type": "cds.String",
+     "length": 70,
+     "notNull": true
+    },
+    "CHARVAL_NUM": {
+     "key": true,
+     "type": "cds.String",
+     "length": 70,
+     "notNull": true
+    },
+    "CHARVAL_DESC": {
+     "key": true,
+     "type": "cds.String",
+     "length": 150,
+     "notNull": true
+    }
+   }
+  },
+  "ConfigProd.getLocProdConfigAPI": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "elements": {
+    "LOCATION_ID": {
+     "key": true,
+     "type": "cds.String",
+     "length": 4,
+     "notNull": true
+    },
+    "LOCATION_DESC": {
+     "key": true,
+     "type": "cds.String",
+     "length": 30,
+     "notNull": true
+    },
+    "PRODUCT_ID": {
+     "key": true,
+     "type": "cds.String",
+     "length": 40,
+     "notNull": true
+    },
+    "PROD_DESC": {
+     "key": true,
+     "type": "cds.String",
+     "length": 40,
+     "notNull": true
+    },
+    "PROD_TYPE": {
+     "key": true,
+     "type": "cds.String",
+     "length": 4,
+     "notNull": true
+    },
+    "CUSTOMER_GROUP": {
+     "key": true,
+     "type": "cds.String",
+     "length": 20,
+     "notNull": true
+    },
+    "IBP_CUSTOMER": {
+     "key": true,
+     "type": "cds.String",
+     "length": 10,
+     "notNull": true
+    },
+    "CLASS_NUM": {
+     "key": true,
+     "type": "cds.String",
+     "length": 20,
+     "notNull": true
+    },
+    "CLASS_NAME": {
+     "key": true,
+     "type": "cds.String",
+     "length": 20,
+     "notNull": true
+    },
+    "CLASS_DESC": {
+     "key": true,
+     "type": "cds.String",
+     "length": 150,
+     "notNull": true
+    },
+    "CHAR_DESC": {
+     "key": true,
+     "type": "cds.String",
+     "length": 150,
+     "notNull": true
+    },
+    "CHAR_NUM": {
+     "key": true,
+     "type": "cds.String",
+     "length": 30,
+     "notNull": true
+    },
+    "CHAR_NAME": {
+     "key": true,
+     "type": "cds.String",
+     "length": 30,
+     "notNull": true
+    },
+    "CHARVAL_NUM": {
+     "key": true,
+     "type": "cds.String",
+     "length": 70,
+     "notNull": true
+    },
+    "CHAR_VALUE": {
+     "key": true,
+     "type": "cds.String",
+     "length": 70,
+     "notNull": true
+    },
+    "CHARVAL_DESC": {
+     "key": true,
+     "type": "cds.String",
+     "length": 150,
+     "notNull": true
+    },
+    "IBPCHAR_CHK": {
+     "key": true,
+     "type": "cds.Boolean",
+     "notNull": true
+    },
+    "VALID_FROM": {
+     "key": true,
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "notNull": true
+    },
+    "VALID_TO": {
+     "key": true,
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "notNull": true
+    }
+   }
+  },
+  "ConfigProd.getLocProdActDemandAPI": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "elements": {
+    "LOCATION_ID": {
+     "key": true,
+     "type": "cds.String",
+     "length": 4,
+     "notNull": true
+    },
+    "PRODUCT_ID": {
+     "key": true,
+     "type": "cds.String",
+     "length": 40,
+     "notNull": true
+    },
+    "REF_PRODID": {
+     "key": true,
+     "type": "cds.String",
+     "length": 40,
+     "notNull": true
+    },
+    "IBP_CUSTOMER": {
+     "key": true,
+     "type": "cds.String",
+     "length": 10,
+     "notNull": true
+    },
+    "WEEK_DATE": {
+     "key": true,
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "notNull": true
+    },
+    "CLASS_NUM": {
+     "key": true,
+     "type": "cds.String",
+     "length": 20,
+     "notNull": true
+    },
+    "CHAR_NUM": {
+     "key": true,
+     "type": "cds.String",
+     "length": 30,
+     "notNull": true
+    },
+    "CHARVAL_NUM": {
+     "key": true,
+     "type": "cds.String",
+     "length": 70,
+     "notNull": true
+    },
+    "IBPCHAR_CHK": {
+     "key": true,
+     "type": "cds.Boolean",
+     "notNull": true
+    },
+    "ORD_QTY": {
+     "key": true,
+     "type": "cds.Decimal",
+     "precision": 13,
+     "scale": 3,
+     "notNull": true
+    },
+    "ADJ_QTY": {
+     "key": true,
+     "type": "cds.Decimal",
+     "precision": 13,
+     "scale": 3,
+     "notNull": true
+    }
+   }
+  },
+  "ConfigProd.getLocProdActualDemandAPI": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "elements": {
+    "LOCATION_ID": {
+     "key": true,
+     "type": "cds.String",
+     "length": 4,
+     "notNull": true
+    },
+    "PRODUCT_ID": {
+     "key": true,
+     "type": "cds.String",
+     "length": 40,
+     "notNull": true
+    },
+    "REF_PRODID": {
+     "key": true,
+     "type": "cds.String",
+     "length": 40,
+     "notNull": true
+    },
+    "IBP_CUSTOMER": {
+     "key": true,
+     "type": "cds.String",
+     "length": 10,
+     "notNull": true
+    },
+    "WEEK_DATE": {
+     "key": true,
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "notNull": true
+    },
+    "CLASS_NUM": {
+     "key": true,
+     "type": "cds.String",
+     "length": 20,
+     "notNull": true
+    },
+    "CHAR_NUM": {
+     "key": true,
+     "type": "cds.String",
+     "length": 30,
+     "notNull": true
+    },
+    "CHARVAL_NUM": {
+     "key": true,
+     "type": "cds.String",
+     "length": 70,
+     "notNull": true
+    },
+    "IBPCHAR_CHK": {
+     "key": true,
+     "type": "cds.Boolean",
+     "notNull": true
+    },
+    "ORD_QTY": {
+     "key": true,
+     "type": "cds.Decimal",
+     "precision": 13,
+     "scale": 3,
+     "notNull": true
+    },
+    "ADJ_QTY": {
+     "key": true,
+     "type": "cds.Decimal",
+     "precision": 13,
+     "scale": 3,
+     "notNull": true
+    }
+   }
+  },
+  "ConfigProd.getMDTAssembly": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "elements": {
+    "LOCID": {
+     "key": true,
+     "type": "cds.String",
+     "length": 4,
+     "notNull": true
+    },
+    "PRDID": {
+     "key": true,
+     "type": "cds.String",
+     "length": 40,
+     "notNull": true
+    },
+    "PRDFR": {
+     "key": true,
+     "type": "cds.String",
+     "length": 40,
+     "notNull": true
+    },
+    "VCSTRUCTURENODE": {
+     "key": true,
+     "type": "cds.String",
+     "length": 50,
+     "notNull": true
+    },
+    "VCSOURCEID": {
+     "key": true,
+     "type": "cds.String",
+     "length": 50,
+     "notNull": true
+    }
+   }
+  },
+  "ConfigProd.cp_ds_UniqueIdDetails": {
+   "kind": "type",
+   "@cds.external": true,
+   "elements": {
+    "product": {
+     "type": "cds.String",
+     "length": 40
+    },
+    "externalIdentification": {
+     "type": "cds.String",
+     "length": 40
+    },
+    "uniqueIDDescription": {
+     "type": "cds.String",
+     "length": 50
+    },
+    "validFrom": {
+     "type": "cds.String",
+     "length": 10
+    },
+    "validTo": {
+     "type": "cds.String",
+     "length": 10
+    },
+    "characteristics": {
+     "items": {
+      "type": "ConfigProd.cp_ds_UniqueItems",
+      "notNull": true
+     }
+    }
+   }
+  },
+  "ConfigProd.cp_ds_UniqueItems": {
+   "kind": "type",
+   "@cds.external": true,
+   "elements": {
+    "characteristic": {
+     "type": "cds.String",
+     "length": 30
+    },
+    "characteristicValue": {
+     "type": "cds.String",
+     "length": 70
+    }
+   }
+  },
+  "ConfigProd.generateUniqueId": {
+   "kind": "action",
+   "@cds.external": true,
+   "params": {
+    "vcRulesList": {
+     "items": {
+      "type": "ConfigProd.cp_ds_UniqueIdDetails",
+      "notNull": true
+     }
+    }
+   }
+  }
+ }
+}
